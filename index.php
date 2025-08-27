@@ -30,26 +30,14 @@
             if ($_POST) {
                 $num1 = $_POST['num1'];
                 $num2 = $_POST['num2'];
+                $num3 = $_POST['num3'];
                 $operation = $_POST['operation'];
                 $result = 0;
                 $error = "";
                 
                 switch ($operation) {
                     case '+':
-                        $result = $num1 + $num2;
-                        break;
-                    case '-':
-                        $result = $num1 - $num2;
-                        break;
-                    case '*':
-                        $result = $num1 * $num2;
-                        break;
-                    case '/':
-                        if ($num2 != 0) {
-                            $result = $num1 / $num2;
-                        } else {
-                            $error = "Cannot divide by zero!";
-                        }
+                        $result = $num1 + $num2 + $num3;
                         break;
                 }
                 
