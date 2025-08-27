@@ -47,7 +47,7 @@
                 } else {
                     echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 = $result</p>";
                 }
-                echo "<p class='average'>Average: $result = $result</p>"; 
+                echo "<p class='average'>Average: $result</p>"; 
 
             }
         ?>
