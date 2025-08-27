@@ -22,6 +22,12 @@
                 <option value="/">÷</option>
             </select>
             <input type="number" name="num2" placeholder=" Assignment Score" required>
+            <select name="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
             <input type="number" name="num3" placeholder=" Exam Score " required>
             <button type="submit">Calculate</button>
         </form>
@@ -62,7 +68,7 @@
                     $letterGrade = "F";
                 }
                     echo "Average: = $result<br>";
-                    echo "Letter Grade: = $letterGrade";
+                    echo "Grade: = $letterGrade";
             }
         ?>
     </div>
