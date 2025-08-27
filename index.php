@@ -33,6 +33,7 @@
                 $num3 = $_POST['num3'];
                 $operation = $_POST['operation'];
                 $result = 0;
+                $average = 0;
                 $error = "";
                 
                 switch ($operation) {
@@ -44,7 +45,7 @@
                 if ($error) {
                     echo "<p class='result' style='color: red;'>$error</p>";
                 } else {
-                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3  = $result</p>";
+                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3  + $average = $result</p>";
                 }
             }
         ?>
