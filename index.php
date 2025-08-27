@@ -32,7 +32,6 @@
                 $num2 = $_POST['num2'];
                 $num3 = $_POST['num3'];
                 $operation = $_POST['operation'];
-                $averslt = $_POST['averslt'];
                 $result = 0;
                 $error = "";
                 
@@ -45,7 +44,7 @@
                 if ($error) {
                     echo "<p class='result' style='color: red;'>$error</p>";
                 } else {
-                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 $averslt  = $result</p>";
+                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3  = $result</p>";
                 }
             }
         ?>
