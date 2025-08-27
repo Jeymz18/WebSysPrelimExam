@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Simple Calculator</h1>
-    
+   
     <div class="calculator">
         <form method="POST">
             <input type="number" name="num1" placeholder="Quiz Score" required>
@@ -25,7 +25,7 @@
             <input type="number" name="num3" placeholder=" Exam Score " required>
             <button type="submit">Calculate</button>
         </form>
-        
+       
         <?php
             if ($_POST) {
                 $num1 = $_POST['num1'];
@@ -34,8 +34,9 @@
                 $operation = $_POST['operation'];
                 $result = 0;
                 $average = 0;
+                $letterGrade = 0;
                 $error = "";
-                
+               
                 switch ($operation) {
                     case '+':
                         $result = ($num1 * 0.3) + ($num2 * 0.3) + ($num3 * 0.4);
@@ -47,8 +48,19 @@
                 } else {
                     echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 = $result</p>";
                 }
-                echo "<p class='average'>Average: $result</p>"; 
+                echo "<p class='average'>Average: $result Letter Grade: $letterGrade $</p>";
 
+                if ($result >= 90) {
+                    $letterGrade = "A";
+                } elseif ($average >= 80) {
+                    $letterGrade = "B";
+                } elseif ($average >= 70) {
+                    $letterGrade = "C";
+                } elseif ($average >= 60) {
+                    $letterGrade = "D";
+                } else {
+                    $letterGrade = "F";
+                }
             }
         ?>
     </div>
