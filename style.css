@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;      /* para nasa gitna both vertical at horizontal */
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.calculator {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+}
