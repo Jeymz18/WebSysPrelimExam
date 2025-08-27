@@ -32,25 +32,26 @@
                 $num2 = $_POST['num2'];
                 $num3 = $_POST['num3'];
                 $operation = $_POST['operation'];
+                $averslt = $_POST['averslt'];
                 $result = 0;
                 $error = "";
                 
                 switch ($operation) {
                     case '+':
                         $result = $num1 + $num2 + $num3;
-                        break;
+                        break;  
                 }
 
-                switch ($operations) {
+                switch ($averslt) {
                     case '/':
-                        $result = $result / 3;
-                        break;
+                        $result = $num1 + $num2 + $num3 / 3;
+                        break;  
                 }
-                
+
                 if ($error) {
                     echo "<p class='result' style='color: red;'>$error</p>";
                 } else {
-                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 $operations 3 = $result</p>";
+                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 $averslt  = $result</p>";
                 }
             }
         ?>
