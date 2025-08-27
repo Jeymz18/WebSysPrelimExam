@@ -39,7 +39,7 @@
                
                 switch ($operation) {
                     case '+':
-                        $result = ($num1 * 0.3) + ($num2 * 0.3) + ($num3 * 0.4);
+                        $result = ($num1 * 0.30) + ($num2 * 0.30) + ($num3 * 0.40);
                         break;  
                 }
 
