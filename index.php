@@ -14,9 +14,9 @@
    
     <div class="calculator">
         <form method="POST">
-            <input type="number" name="Quiz"placeholder="Quiz Score" required>
-            <input type="number" name="Assignment"placeholder="Assignment Score" required>
-            <input type="number" name="Exam"placeholder="Exam Score" required>
+            <input type="number" name="Quiz" placeholder="Quiz Score" required>
+            <input type="number" name="Assignment" placeholder="Assignment Score" required>
+            <input type="number" name="Exam" placeholder="Exam Score" required>
             <button type="submit">Calculate</button>
         </form>
        
@@ -27,26 +27,25 @@
                 $Exam = $_POST['Exam'];
                
                 if (is_numeric($Quiz) && is_numeric($Assignment) && is_numeric($Exam) &&
-                min($Quiz, $Assignment, $Exam) >= 0 && 
-                max($Quiz, $Assignment, $Exam) <= 100) {
-                
-                $Average = ($quiz * 0.30) + ($assignment * 0.30) + ($exam * 0.40);
-  
-                }
+                    min($Quiz, $Assignment, $Exam) >= 0 && 
+                    max($Quiz, $Assignment, $Exam) <= 100) {
                     
+                    $Average = ($Quiz * 0.30) + ($Assignment * 0.30) + ($Exam * 0.40);
+  
+                    if ($Average >= 90) {
+                        $letterGrade = "A";
+                    } elseif ($Average >= 80) {
+                        $letterGrade = "B";
+                    } elseif ($Average >= 70) {
+                        $letterGrade = "C";
+                    } elseif ($Average >= 60) {
+                        $letterGrade = "D";
+                    } else {
+                        $letterGrade = "F";
+                    }
 
-                if ($Average >= 90) {
-                    $letterGrade = "A";
-                } elseif ($Average >= 80) {
-                    $letterGrade = "B";
-                } elseif ($Average >= 70) {
-                    $letterGrade = "C";
-                } elseif ($Average >= 60) {
-                    $letterGrade = "D";
-                } else {
-                    $letterGrade = "F";
-                }
                     echo "Final Grade: " . number_format($Average, 1) . " (Letter Grade: $letterGrade)";
+                }
             }
         ?>
     </div>
