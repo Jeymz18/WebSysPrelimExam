@@ -61,7 +61,8 @@
                 } else {
                     $letterGrade = "F";
                 }
-                    echo "<p class='average'>Average: = $result Letter Grade: = $letterGrade $</p>";
+                    echo "Average: = $result<br>";
+                    echo "Letter Grade: = $letterGrade";
             }
         ?>
     </div>
