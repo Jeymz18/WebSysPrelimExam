@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Simple Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; }
         .calculator { border: 2px solid #ccc; padding: 20px; width: 300px; }
