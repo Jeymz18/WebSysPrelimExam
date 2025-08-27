@@ -14,14 +14,9 @@
    
     <div class="calculator">
         <form method="POST">
-            <input type="number" placeholder="Quiz Score" required>
-            <select name="operation">
-            </select>
-            <input type="number" placeholder=" Assignment Score" required>
-            <select name="operation">
-            </select>
-            <input type="number" placeholder=" Exam Score " required>
-            <button type="submit">Calculate</button>
+            <input type="number" name="Quiz"placeholder="Quiz Score" required>
+            <input type="number" name="Assignment"placeholder="Assignment Score" required>
+            <input type="number" name="Exam"placeholder="Exam Score" required>
         </form>
        
         <?php
@@ -30,26 +25,12 @@
                 $Assignment = $_POST['Assignment'];
                 $Exam = $_POST['Exam'];
                
-                switch ($operation) {
-                    case '+':
-                        $result = ($num1 * 0.30) + ($num2 * 0.30) + ($num3 * 0.40);
-                        break;
-                    case '-':
-                        $result = $num1 - $num2;
-                        break;
-                    case '*':
-                        $result = $num1 * $num2;
-                        break;
-                    case '/':
-                        if ($num2 != 0) {
-                            $result = $num1 / $num2;
-                        } else {
-                            $error = "Cannot divide by zero!";
-                        }
-                        break;
+                if (is_numeric($Quiz) && is_numeric($Assignment) && is_numeric($Exam) &&
+                min($Quiz, $Assignment, $Exam) >= 0 && 
+                max($Quiz, $Assignment, $Exam) <= 100) {
   
                 }
-                    $finalGrade = ($quiz * 0.30) + ($assignment * 0.30) + ($exam * 0.40);
+                    $Average = ($quiz * 0.30) + ($assignment * 0.30) + ($exam * 0.40);
 
                 if ($result >= 90) {
                     $letterGrade = "A";
@@ -62,8 +43,7 @@
                 } else {
                     $letterGrade = "F";
                 }
-                    echo "Average: = $result<br>";
-                    echo "Grade: = $letterGrade";
+                    echo "Final Grade: " . number_format($Average, 1) . " (Letter Grade: $letterGrade)";
             }
         ?>
     </div>
