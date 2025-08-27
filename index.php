@@ -38,13 +38,7 @@
                 
                 switch ($operation) {
                     case '+':
-                        $result = $num1 + $num2 + $num3;
-                        break;  
-                }
-
-                switch ($averslt) {
-                    case '/':
-                        $result = $num1 + $num2 + $num3 / 3;
+                        $result = ($num1 * 0.3) + ($num2 * 0.3) + ($num3 * 0.4);
                         break;  
                 }
 
