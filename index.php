@@ -17,6 +17,7 @@
             <input type="number" name="Quiz"placeholder="Quiz Score" required>
             <input type="number" name="Assignment"placeholder="Assignment Score" required>
             <input type="number" name="Exam"placeholder="Exam Score" required>
+            <button type="submit">Calculate</button>
         </form>
        
         <?php
@@ -28,17 +29,19 @@
                 if (is_numeric($Quiz) && is_numeric($Assignment) && is_numeric($Exam) &&
                 min($Quiz, $Assignment, $Exam) >= 0 && 
                 max($Quiz, $Assignment, $Exam) <= 100) {
+                
+                $Average = ($quiz * 0.30) + ($assignment * 0.30) + ($exam * 0.40);
   
                 }
-                    $Average = ($quiz * 0.30) + ($assignment * 0.30) + ($exam * 0.40);
+                    
 
-                if ($result >= 90) {
+                if ($Average >= 90) {
                     $letterGrade = "A";
-                } elseif ($average >= 80) {
+                } elseif ($Average >= 80) {
                     $letterGrade = "B";
-                } elseif ($average >= 70) {
+                } elseif ($Average >= 70) {
                     $letterGrade = "C";
-                } elseif ($average >= 60) {
+                } elseif ($Average >= 60) {
                     $letterGrade = "D";
                 } else {
                     $letterGrade = "F";
