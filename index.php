@@ -40,11 +40,17 @@
                         $result = $num1 + $num2 + $num3;
                         break;
                 }
+
+                switch ($operations) {
+                    case '/':
+                        $result = $result / 3;
+                        break;
+                }
                 
                 if ($error) {
                     echo "<p class='result' style='color: red;'>$error</p>";
                 } else {
-                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 / 3 = $result</p>";
+                    echo "<p class='result'>Result: $num1 $operation $num2 $operation $num3 $operations 3 = $result</p>";
                 }
             }
         ?>
